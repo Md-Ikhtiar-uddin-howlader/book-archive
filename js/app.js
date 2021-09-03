@@ -1,7 +1,7 @@
 document.getElementById('books-number').style.display = 'none';
 document.getElementById('error-message').style.display = 'none';
 
-//functin for null input field
+//function for null input field
 const errorMessage = () => {
     document.getElementById('books-number').style.display = 'none';
     document.getElementById('error-message').style.display = 'block';
@@ -28,7 +28,7 @@ const loadData = () => {
         //clear search result
         document.getElementById('books-container').textContent = '';
 
-        const url = `http://openlibrary.org/search.json?q=${searchText}`;
+        const url = `https://openlibrary.org/search.json?q=${searchText}`;
         fetch(url)
             .then(res => res.json())
             .then(data => displayData(data.docs))
@@ -50,7 +50,7 @@ const displayData = books => {
         //hiding error message
         document.getElementById('error-message').style.display = 'none';
 
-        //display fonuded result of books-numbers 
+        //display founded result of books-numbers 
         document.getElementById('books-number').style.display = 'block';
 
         //display searched result
